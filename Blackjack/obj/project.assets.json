@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yagod\\Documents\\GitHub\\FundamentosProgramación\\Blackjack\\Blackjack.csproj",
+      "projectUniqueName": "C:\\Users\\yagod\\Documents\\GitHub\\FundamentosProgramación\\ProyectoBlackjack\\Blackjack\\Blackjack.csproj",
       "projectName": "Blackjack",
-      "projectPath": "C:\\Users\\yagod\\Documents\\GitHub\\FundamentosProgramación\\Blackjack\\Blackjack.csproj",
+      "projectPath": "C:\\Users\\yagod\\Documents\\GitHub\\FundamentosProgramación\\ProyectoBlackjack\\Blackjack\\Blackjack.csproj",
       "packagesPath": "C:\\Users\\yagod\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yagod\\Documents\\GitHub\\FundamentosProgramación\\Blackjack\\obj\\",
+      "outputPath": "C:\\Users\\yagod\\Documents\\GitHub\\FundamentosProgramación\\ProyectoBlackjack\\Blackjack\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yagod\\AppData\\Roaming\\NuGet\\NuGet.Config"
