@@ -1,15 +1,20 @@
 using System.Collections;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 
 class Baraja
 {
-    private string[] palos = {"Picas","Treboles","Corazones","Diamantes"};
+    private string[] palos = {"\u2660","\u2663","\u2665","\u2666"};
     private string[] numeros = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
 
     private Dictionary<string,int> baraja = new Dictionary<string,int>();
+    
 
-    public void creaBaraja()
+
+    public void recogeBaraja()
     {
+        baraja.Clear();
+
         int j=0;
         for (int i = 0; i < 13; i++)
         {
@@ -23,7 +28,7 @@ class Baraja
                     j=10;
                 }
                 
-                baraja.Add(numeros[i] +" "+ p,j);
+                baraja.Add(numeros[i] + p,j);
             }
 
             //Console.WriteLine(baraja.Keys);
@@ -31,6 +36,7 @@ class Baraja
     }
 
     public void mostrarBaraja()
+
     {
         foreach(var carta in baraja)
         {
@@ -38,6 +44,24 @@ class Baraja
             Console.WriteLine();
         }
     }
+
+    public KeyValuePair<string,int> robarCarta()
+    {
+        Random random = new Random();
+
+        var cartaRobada = baraja.ElementAt(random.Next(0,53));
+        baraja.Remove(cartaRobada.Key);
+
+        return cartaRobada;
+
+        
+        //Console.WriteLine((baraja.ElementAt(random.Next(0,53)).Key));
+        //string carta = baraja.ElementAt(random.Next(0,53)).Key;
+    }
+
+    
+
+
 
 }
     
