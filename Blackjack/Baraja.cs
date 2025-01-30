@@ -13,22 +13,22 @@ class Baraja
 
     public void recogeBaraja()
     {
-        baraja.Clear();
-
-        int j=0;
-        for (int i = 0; i < 13; i++)
+        // baraja.Clear();
+        string key;
+        int j;
+        for (int i = 0; i < numeros.Length; i++)
         {
-            foreach(string p in palos)
+            for(int p=0; p<4;p++)
             {
                 if(i < 10)
                 {
                     j=i+1;
-                }else if(i > 9)
+                }else
                 {
                     j=10;
                 }
-                
-                baraja.Add(numeros[i] + p,j);
+                key = numeros[i]+palos[p];
+                baraja.Add(key,j);
             }
 
             //Console.WriteLine(baraja.Keys);
@@ -49,13 +49,12 @@ class Baraja
     {
         Random random = new Random();
 
-        var cartaRobada = baraja.ElementAt(random.Next(0,53));
+        var cartaRobada = baraja.ElementAt(random.Next(0,52));
         baraja.Remove(cartaRobada.Key);
 
         return cartaRobada;
-
         
-        //Console.WriteLine((baraja.ElementAt(random.Next(0,53)).Key));
+        // Console.WriteLine(baraja.ElementAt(random.Next(0,53)).Key);
         //string carta = baraja.ElementAt(random.Next(0,53)).Key;
     }
 
@@ -64,6 +63,3 @@ class Baraja
 
 
 }
-    
-    
-
