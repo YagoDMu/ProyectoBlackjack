@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.ComponentModel;
 using System.Xml.Serialization;
 
@@ -151,6 +151,11 @@ class Entrada
             {
                 Console.WriteLine("Entrada no válida");
                 Console.WriteLine();
+            }
+            if(numero != 1 && numero !=2)
+            {
+                Console.WriteLine("Inserta una de las opciones posibles");
+                valido = false;
             }
             
         }while (!valido);
