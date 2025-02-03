@@ -56,7 +56,7 @@ class Entrada
                     }else if(sumaCasino == 21){
                         Console.WriteLine("La primera carta de la banca ha sido un :"+cartaRobada.Key);
                         Console.WriteLine("\n   \u001B[33mLa banca también tiene "+sumaCasino+". \u001B[0m");
-                        Console.Write("\u001B[33mEs un empate!\u001B[0m");
+                        Console.Write("\u001B[33m Es un empate\u001B[0m");
                         break;
                     }else if(sumaCasino != 21){
                         Console.WriteLine("\n   \u001B[32m¡Tienes BlackJack!     \u001B[33mLa banca tiene "+sumaCasino+". \n \u001B[0m");
@@ -96,6 +96,10 @@ class Entrada
                             Console.Write("     Tu suma es: "+suma);
                             if(sumaCasino > suma){
                                 Console.Write("\u001B[33m  ~ Gana la banca ~\u001B[0m\n");
+                            }
+                            else if(sumaCasino == suma){
+                                Console.Write("\u001B[33m Es un empate\u001B[0m");
+                                break;
                             }
                             else{
                                 Console.WriteLine("\u001B[33m  ~ Ganas la partida ~\u001B[0m");
