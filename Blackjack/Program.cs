@@ -5,7 +5,6 @@ using System.Xml.Serialization;
 class Entrada
 {
     private static Baraja baraja = new Baraja();
-    private static Baraja baraja = new Baraja();
 
     public static void Main(String[] args)
     {
@@ -161,8 +160,5 @@ class Entrada
         Console.WriteLine("");
         return numero;
     }
-    
-}
-
     
 }
