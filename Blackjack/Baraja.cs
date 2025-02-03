@@ -28,7 +28,6 @@ class Baraja
                 key = numeros[i]+" "+palos[p];
                 baraja.Add(key,j);
             }
-            //Console.WriteLine(baraja.Keys);
         }  
     }
 
@@ -37,7 +36,6 @@ class Baraja
         foreach(var carta in baraja)
         {
             Console.WriteLine(" Carta Key: "+carta.Key + " Valor: "+ carta.Value);
-            // Console.WriteLine();
         }
     }
 
@@ -46,14 +44,7 @@ class Baraja
         Random random = new Random();
         var cartaRobada = baraja.ElementAt(random.Next(0,baraja.Count()));
         baraja.Remove(cartaRobada.Key);
-            // catch (System.ArgumentOutOfRangeException){
-            //     Console.WriteLine(" \n #### Excepcion: ArgumentOutOfRangeException ### \n");
-            // }
         return cartaRobada;
-        
-        // Console.WriteLine(baraja.ElementAt(random.Next(0,53)).Key);
-        //string carta = baraja.ElementAt(random.Next(0,53)).Key;
     }
 
-    
 }
