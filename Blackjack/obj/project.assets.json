@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\yagod\\.nuget\\packages\\": {}
+    "C:\\Users\\davo_\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yagod\\Documents\\GitHub\\FundamentosProgramación\\ProyectoBlackjack\\Blackjack\\Blackjack.csproj",
+      "projectUniqueName": "C:\\Users\\davo_\\Documents\\GitHub\\ProyectoBlackjack-1\\Blackjack\\Blackjack.csproj",
       "projectName": "Blackjack",
-      "projectPath": "C:\\Users\\yagod\\Documents\\GitHub\\FundamentosProgramación\\ProyectoBlackjack\\Blackjack\\Blackjack.csproj",
-      "packagesPath": "C:\\Users\\yagod\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yagod\\Documents\\GitHub\\FundamentosProgramación\\ProyectoBlackjack\\Blackjack\\obj\\",
+      "projectPath": "C:\\Users\\davo_\\Documents\\GitHub\\ProyectoBlackjack-1\\Blackjack\\Blackjack.csproj",
+      "packagesPath": "C:\\Users\\davo_\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\davo_\\Documents\\GitHub\\ProyectoBlackjack-1\\Blackjack\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\yagod\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\davo_\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.405/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
