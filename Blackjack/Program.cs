@@ -37,7 +37,7 @@ class Entrada
             Console.Write("\n\u001B[32mTienes un: \u001B[0m");
             suma += jugar(true);
             if(blackJackNatural && suma == 11){
-                Console.WriteLine("\n   \u001B[32mTienes 21.\u001B[0m  \u001B[32mA ver que saca la banca...\u001B[0m");
+                Console.WriteLine("\n   \u001B[32m¡Tienes BlackJack!.\u001B[0m  \u001B[32mA ver que saca la banca...\u001B[0m");
                 suma = 21;
             }
             Console.Write("\u001B[34m       La banca tiene: \u001B[0m");
@@ -52,7 +52,7 @@ class Entrada
                 if(suma >= 21 || sumaCasino > 21){
                     if(suma == 21 && tuTurno){
                         Console.WriteLine("\n La primera carta de la banca ha sido un: "+cartaRobada.Key);
-                        Console.WriteLine("   \u001B[32m¡Tienes BlackJack!\u001B[0m    La banca tiene "+sumaCasino+".");
+                        Console.WriteLine("   \u001B[32mTienes 21\u001B[0m    La banca tiene "+sumaCasino+".");
                         tuTurno = false;
                     }
                     else if(suma > 21){
