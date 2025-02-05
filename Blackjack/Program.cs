@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.ComponentModel;
 using System.Xml.Serialization;
 
@@ -8,7 +8,7 @@ class Entrada
 
     public static void Main(String[] args)
     {
-        int continuar;
+        int continuar = 1;
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         Console.WriteLine("         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         Console.WriteLine("\n             \u2660   Bienvendo a la mesa de BlackJack   \u2660\n");
@@ -39,20 +39,26 @@ class Entrada
             if(blackJackNatural && suma == 11){
                 Console.WriteLine("\n   \u001B[32m¡Tienes BlackJack!.\u001B[0m  \u001B[32mA ver que saca la banca...\u001B[0m");
                 suma = 21;
-            }
+            }else{blackJackNatural = false;}
             Console.Write("\u001B[34m       La banca tiene: \u001B[0m");
             sumaCasino += jugar(true);
-            if(blackJackBanca && sumaCasino == 11){
+            if(blackJackNatural && blackJackBanca){
                 Console.WriteLine("  La primera carta de la banca ha sido un: "+cartaRobada.Key);
-                sumaCasino = 21;
+                if(sumaCasino == 11){
+                    Console.WriteLine("\u001B[33m ~ Es un empate ~\u001B[0m\n");
+                    eleccion = 2;
+                }else if(!blackJackBanca){
+                    Console.WriteLine("\u001B[32m               ~ Has ganado la partida ~\u001B[0m");
+                    eleccion = 2;
+                }
             }
             Console.WriteLine();
 
-            do{
+            while(eleccion == 1 || !tuTurno){
                 if(suma >= 21 || sumaCasino > 21){
                     if(suma == 21 && tuTurno){
                         Console.WriteLine("\n La primera carta de la banca ha sido un: "+cartaRobada.Key);
-                        Console.WriteLine("   \u001B[32mTienes 21\u001B[0m    La banca tiene "+sumaCasino+".");
+                        Console.WriteLine("   \u001B[32mTienes 21\u001B[0m               La banca tiene: "+sumaCasino);
                         tuTurno = false;
                     }
                     else if(suma > 21){
@@ -79,7 +85,7 @@ class Entrada
                         tuTurno = false;
                         Console.WriteLine(" La primera carta de la banca ha sido un: "+cartaRobada.Key);
                         if(sumaCasino!=21){
-                            Console.WriteLine("  La segunda carta de la banca valía:      "+(sumaCasino-cartaRobada.Value)+"\u001B[0m");
+                            Console.WriteLine("  La segunda carta de la banca vale:       "+(sumaCasino-cartaRobada.Value)+"\u001B[0m");
                             }
                         Console.Write("  \u001B[34m La banca tiene \u001B[0m"+sumaCasino);
                     }else{
@@ -104,8 +110,7 @@ class Entrada
                     sumaCasino += jugar(true);
                     Console.WriteLine($"\u001B[34m   Ahora tiene: \u001B[0m {sumaCasino}");
                 }
-            }while(eleccion == 1 || !tuTurno);
-            
+            }
             Console.WriteLine("   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             Console.WriteLine("\n       \u001B[32m\u2665\u001B[0m ¿Quieres seguir apostando tus últimos ahorros? \u001B[32m\u2665\u001B[0m");
             Console.WriteLine("        1: Juega otra partida");
@@ -143,7 +148,7 @@ class Entrada
         
         do
         {
-            string consola = Console.ReadLine();
+            string? consola = Console.ReadLine();
             valido = int.TryParse(consola, out numero);
 
             if(!valido)
