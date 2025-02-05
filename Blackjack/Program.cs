@@ -8,7 +8,7 @@ class Entrada
 
     public static void Main(String[] args)
     {
-        int continuar = 1;
+        int continuar;
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         Console.WriteLine("         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         Console.WriteLine("\n             \u2660   Bienvendo a la mesa de BlackJack   \u2660\n");
@@ -42,12 +42,12 @@ class Entrada
             }else{blackJackNatural = false;}
             Console.Write("\u001B[34m       La banca tiene: \u001B[0m");
             sumaCasino += jugar(true);
-            if(blackJackNatural && blackJackBanca){
-                Console.WriteLine("  La primera carta de la banca ha sido un: "+cartaRobada.Key);
-                if(sumaCasino == 11){
+            if(blackJackNatural){
+                Console.WriteLine("\u001B[34m   La primera carta de la banca ha sido un: \u001B[0m"+cartaRobada.Key);
+                if(sumaCasino == 11 && blackJackBanca){
                     Console.WriteLine("\u001B[33m ~ Es un empate ~\u001B[0m\n");
                     eleccion = 2;
-                }else if(!blackJackBanca){
+                }else if(blackJackNatural && !(sumaCasino == 11)){
                     Console.WriteLine("\u001B[32m               ~ Has ganado la partida ~\u001B[0m");
                     eleccion = 2;
                 }
@@ -145,12 +145,10 @@ class Entrada
     {
         int numero;
         bool valido;
-        
         do
         {
             string? consola = Console.ReadLine();
             valido = int.TryParse(consola, out numero);
-
             if(!valido)
             {
                 Console.Write("\n\u001B[33m Entrada no válida.\u001B[0m");
